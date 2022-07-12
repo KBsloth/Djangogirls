@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Kirstys Blog</title>
+        <centre><title>Kirstys Blog</title>
     </head>
     <body>
         <header>
@@ -17,7 +17,20 @@
         <article>
             <time>published: 14.05.2022, 12:55</time>
             <h2><a href="">My second post</a></h2>
-            <p>My previous statement still stands...</p>
+            <p>My previous statement still stands...</p></centre>
         </article>
     </body>
+
+    <header>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </header>
+    
+    {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+    
 </html>
